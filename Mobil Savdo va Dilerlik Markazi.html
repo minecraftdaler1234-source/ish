@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mobil Savdo va Dilerlik Markazi</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#0b1a3a;--mut:#5a6785;--navy:#0a1f4d;--navy2:#13306e;--gold:#d4a73a;--gold2:#f2d27a;--line:#e3e7f0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070f24;--card:#0f1c3f;--ink:#eef2fb;--mut:#9fb0d3;--line:#1e2f5e}}
+:root[data-theme="dark"]{--bg:#070f24;--card:#0f1c3f;--ink:#eef2fb;--mut:#9fb0d3;--line:#1e2f5e}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1100px;margin:auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:rgba(10,31,77,.95);backdrop-filter:blur(8px);padding-top:env(safe-area-inset-top,0px)}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px;color:#fff}
+.logo{font-weight:800;letter-spacing:.5px}.logo b{color:var(--gold)}
+nav ul{display:flex;gap:22px;list-style:none;padding:0;font-size:14px}
+nav ul a:hover{color:var(--gold2)}
+.hero{background:radial-gradient(circle at 80% 20%,#1d4a9e 0,transparent 45%),linear-gradient(135deg,var(--navy),#06122e);color:#fff;padding:90px 0 80px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-80px;bottom:-80px;width:340px;height:340px;border:2px solid rgba(212,167,58,.35);border-radius:50%;box-shadow:0 0 0 40px rgba(212,167,58,.07)}
+.tag{display:inline-block;border:1px solid var(--gold);color:var(--gold2);padding:4px 14px;border-radius:99px;font-size:13px;margin-bottom:18px}
+h1{font-size:clamp(32px,6vw,58px);line-height:1.1;max-width:720px}
+h1 span{background:linear-gradient(90deg,var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:540px;margin:18px 0 28px;color:#c9d6f2;font-size:18px}
+.btn{display:inline-block;padding:14px 26px;border-radius:12px;font-weight:700;transition:.2s;cursor:pointer;border:0;font-size:16px}
+.gold{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#1a1400}
+.gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,167,58,.4)}
+.ghost{border:1px solid rgba(255,255,255,.4);color:#fff;margin-left:10px}
+.stats{display:flex;gap:34px;margin-top:44px;flex-wrap:wrap}
+.stats b{display:block;font-size:28px;color:var(--gold2)}.stats small{color:#9fb0d3}
+section{padding:70px 0}
+.title{text-align:center;margin-bottom:38px}
+.title h2{font-size:clamp(26px,4vw,36px)}
+.title h2:after{content:"";display:block;width:60px;height:4px;background:var(--gold);border-radius:4px;margin:12px auto 0}
+.title p{color:var(--mut);margin-top:10px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(10,31,77,.14)}
+.ico{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--navy2));display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+.card h3{margin-bottom:6px}.card p{color:var(--mut);font-size:15px}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+.tab{padding:9px 20px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-size:14px}
+.tab.on{background:var(--navy);color:var(--gold2);border-color:var(--navy)}
+.num{position:relative;overflow:hidden;text-align:center}
+.num .n{font-size:24px;font-weight:800;letter-spacing:1px;margin:10px 0;font-variant-numeric:tabular-nums}
+.badge{font-size:12px;font-weight:700;padding:3px 12px;border-radius:99px;background:var(--navy);color:var(--gold2)}
+.badge.vip{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#1a1400}
+.price{color:var(--gold);font-weight:800;font-size:18px;margin-bottom:14px}
+.num .btn{padding:10px 18px;font-size:14px;background:var(--navy);color:#fff;width:100%}
+.num .btn:hover{background:var(--navy2)}
+.tw{overflow-x:auto;border-radius:18px;border:1px solid var(--line);background:var(--card)}
+table{width:100%;border-collapse:collapse;min-width:620px}
+th{background:var(--navy);color:var(--gold2);text-align:left;padding:14px 18px;font-size:14px}
+td{padding:14px 18px;border-top:1px solid var(--line);font-size:15px}
+.op{font-weight:700}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px}
+.calc{background:linear-gradient(135deg,var(--navy),#06122e);color:#fff;border-radius:24px;padding:36px;display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.calc label{display:block;font-size:14px;color:#c9d6f2;margin:14px 0 6px}
+.calc input[type=range]{width:100%;accent-color:var(--gold)}
+.calc select{width:100%;padding:11px;border-radius:10px;border:0;font-size:15px}
+.res{background:rgba(255,255,255,.07);border:1px solid rgba(212,167,58,.4);border-radius:18px;padding:24px;text-align:center;align-self:center}
+.res b{display:block;font-size:34px;color:var(--gold2);margin:6px 0}
+.res small{color:#9fb0d3}
+.adv{margin-top:26px}
+footer{background:var(--navy);color:#c9d6f2;padding:50px 0 26px}
+.fg{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+footer h4{color:var(--gold2);margin-bottom:10px}
+footer a:hover{color:var(--gold2)}
+.copy{text-align:center;margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#7f93bd}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:#229ed9;display:grid;place-items:center;font-size:26px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:20}
+@media(max-width:720px){nav ul{display:none}.ghost{margin:10px 0 0}.hero{padding:60px 0}.calc{padding:24px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<div class="logo">MOBIL<b>SAVDO</b></div>
+<ul><li><a href="#xizmat">Xizmatlar</a></li><li><a href="#raqam">Raqamlar</a></li><li><a href="#tarif">Tariflar</a></li><li><a href="#afzal">Afzalliklar</a></li><li><a href="#aloqa">Aloqa</a></li></ul>
+<a class="btn gold" style="padding:8px 16px;font-size:14px" href="https://t.me/USERNAME" target="_blank">Telegram</a>
+</nav></div></header>
+
+<div class="hero"><div class="wrap">
+<span class="tag">✦ Ishonchli hamkor</span>
+<h1>Mobil Savdo va <span>Dilerlik Markazi</span></h1>
+<p>Sim-kartalar ulgurji va chakana savdosi, VIP raqamlar va dilerlar uchun qulay shartlar — barchasi bir joyda.</p>
+<a class="btn gold" href="https://t.me/USERNAME" target="_blank">✈ Telegram orqali bog‘lanish</a>
+<a class="btn ghost" href="#raqam">Raqamlarni ko‘rish</a>
+<div class="stats"><div><b>10+ yil</b><small>Bozor tajribasi</small></div><div><b>1000+</b><small>Mamnun mijozlar</small></div><div><b>24/7</b><small>Telegram qo‘llab-quvvatlash</small></div></div>
+</div></div>
+
+<section id="xizmat"><div class="wrap">
+<div class="title"><h2>Dilerlik xizmatlari</h2><p>Biznesingizni biz bilan kengaytiring</p></div>
+<div class="grid">
+<div class="card"><div class="ico">📦</div><h3>Ulgurji sim-kartalar</h3><p>Barcha operatorlarning sim-kartalari ulgurji narxlarda, doimiy zaxira bilan.</p></div>
+<div class="card"><div class="ico">🤝</div><h3>Dilerlar uchun shartlar</h3><p>Hajmga qarab chegirmalar, bonuslar va to‘lov bo‘yicha qulay kelishuvlar.</p></div>
+<div class="card"><div class="ico">🚚</div><h3>Tez yetkazib berish</h3><p>Buyurtmalar tezkor va xavfsiz tarzda manzilingizga yetkaziladi.</p></div>
+<div class="card"><div class="ico">🎓</div><h3>Hamkorlik va yordam</h3><p>Yangi dilerlarga ishni boshlash bo‘yicha maslahat va doimiy qo‘llab-quvvatlash.</p></div>
+</div></div></section>
+
+<section id="raqam" style="background:var(--card)"><div class="wrap">
+<div class="title"><h2>VIP va oddiy raqamlar</h2><p>Sotuvdagi chiroyli raqamlar. Narxlar namunaviy — aniqlashtirish uchun yozing.</p></div>
+<div class="tabs" id="tabs"><button class="tab on" data-c="all">Barchasi</button><button class="tab" data-c="VIP">VIP</button><button class="tab" data-c="Oltin">Oltin</button><button class="tab" data-c="Oddiy">Oddiy</button></div>
+<div class="grid" id="nums"></div>
+</div></section>
+
+<section id="tarif"><div class="wrap">
+<div class="title"><h2>Operatorlar va tariflar</h2><p>O‘zbekistondagi asosiy aloqa operatorlari uchun takliflar</p></div>
+<div class="tw"><table>
+<tr><th>Operator</th><th>Tarif</th><th>Oylik to‘lov</th><th>Imkoniyat</th><th>Diler narxi</th></tr>
+<tr><td class="op"><span class="dot" style="background:#f7a800"></span>Beeline</td><td>Status silver tarif</td><td>90 000— so‘m</td><td>90 gb + 1000 daqiqa</td><td>So‘rang</td></tr>
+<tr><td class="op"><span class="dot" style="background:#7b2ff7"></span>Ucell</td><td>Ovoz starttarif</td><td>20 000— so‘m</td><td>500daqida + 400 sms</td><td>So‘rang</td></tr>
+<tr><td class="op"><span class="dot" style="background:#e30613"></span>Mobiuz</td><td>mazza2.0 tarif</td><td>65 000— so‘m</td><td>Cheksiz ijtimoiy tarmoq</td><td>So‘rang</td></tr>
+<tr><td class="op"><span class="dot" style="background:#00a859"></span>Uzmobile</td><td>super salom tarif</td><td>70 000— so‘m</td><td>Internet + daqiqalar</td><td>So‘rang</td></tr>
+<tr><td class="op"><span class="dot" style="background:#00b2e3"></span>Humans</td><td>cheksiz tarif</td><td>95 000— so‘m</td><td>Hamma narsa cheksiz</td><td>So‘rang</td></tr>
+</table></div></div></section>
+
+<section id="afzal" style="background:var(--card)"><div class="wrap">
+<div class="title"><h2>Nega aynan biz?</h2><p>Daromadingizni hisoblab ko‘ring</p></div>
+<div class="calc">
+<div>
+<h3 style="color:var(--gold2)">Diler daromad kalkulyatori</h3>
+<label>Oylik sim-karta soni: <b id="qv">200</b> dona</label>
+<input type="range" id="q" min="10" max="2000" step="10" value="200">
+<label>Bitta kartadan foyda: <b id="mv">5 000</b> so‘m</label>
+<input type="range" id="m" min="1000" max="30000" step="500" value="5000">
+<label>Operator</label>
+<select id="o"><option>Beeline</option><option>Ucell</option><option>Mobiuz</option><option>Uzmobile</option><option>Humans</option></select>
+</div>
+<div class="res"><small>Taxminiy oylik foyda</small><b id="r">1 000 000 so‘m</b><small id="y">Yillik: 12 000 000 so‘m</small></div>
+</div>
+<div class="grid adv">
+<div class="card"><h3>✔ Ishonchlilik</h3><p>Rasmiy va asl sim-kartalar, shaffof hamkorlik.</p></div>
+<div class="card"><h3>✔ Qulay narxlar</h3><p>Hajm oshgan sari ulgurji narx yanada arzonlashadi.</p></div>
+<div class="card"><h3>✔ Tezkor aloqa</h3><p>Savollarga Telegram orqali tez javob beramiz.</p></div>
+</div></div></section>
+
+<footer id="aloqa"><div class="wrap">
+<div class="fg">
+<div><h4>Mobil Savdo va Dilerlik Markazi</h4><p>Sim-kartalar, VIP raqamlar va dilerlik bo‘yicha ishonchli hamkoringiz.</p></div>
+<div><h4>Bog‘lanish</h4><p>📞 <a href="tel:+998(33)-217-50-50">+998 (33) 217-50-50</a></p><p>✈ <a href="https://t.me/@Markaz5050" target="_blank">@Markaz5050</a></p></div>
+<div><h4>Ish vaqti</h4><p>Dushanba – Shanba: 08:00 – 24:00</p><p>Yakshanba: 10:00 – 15:00</p></div>
+</div>
+<div class="copy">© 2026 Mobil Savdo va Dilerlik Markazi. Barcha huquqlar himoyalangan.</div>
+</div></footer>
+
+<a class="fab" href="https://t.me/USERNAME" target="_blank" aria-label="Telegram">✈</a>
+
+<script>
+var N=[["90 777 77 77","VIP","2 500 000"],["91 123 45 67","VIP","1 800 000"],["93 888 88 88","VIP","3 000 000"],["94 555 00 55","Oltin","700 000"],["97 111 22 33","Oltin","550 000"],["99 900 90 09","Oltin","450 000"],["88 333 44 55","Oddiy","120 000"],["95 200 30 40","Oddiy","90 000"],["77 010 20 30","Oddiy","80 000"]];
+var box=document.getElementById("nums");
+function show(c){box.innerHTML=N.filter(function(x){return c=="all"||x[1]==c}).map(function(x){
+return '<div class="card num"><span class="badge '+(x[1]=="VIP"?"vip":"")+'">'+x[1]+'</span><div class="n">+998 '+x[0]+'</div><div class="price">'+x[2]+' so‘m</div><a class="btn" target="_blank" href="https://t.me/USERNAME?text='+encodeURIComponent("Salom! +998 "+x[0]+" raqami bo‘yicha yozyapman")+'">Sotib olish</a></div>'}).join("")}
+show("all");
+document.getElementById("tabs").onclick=function(e){var t=e.target.closest(".tab");if(!t)return;
+document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("on")});t.classList.add("on");show(t.dataset.c)};
+function f(n){return n.toLocaleString("ru-RU")}
+function calc(){var q=+document.getElementById("q").value,m=+document.getElementById("m").value,s=q*m;
+document.getElementById("qv").textContent=f(q);document.getElementById("mv").textContent=f(m);
+document.getElementById("r").textContent=f(s)+" so‘m";document.getElementById("y").textContent="Yillik: "+f(s*12)+" so‘m"}
+document.getElementById("q").oninput=calc;document.getElementById("m").oninput=calc;calc();
+</script>
+</body>
+</html>
